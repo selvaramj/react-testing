@@ -4,10 +4,12 @@ import React from "react";
 import Greet from "./components/greet/greet.tsx";
 import Application from "./components/application/application.tsx";
 import Skills from "./components/skills/skills.tsx";
+import Mui from "./components/MUI/Mui.tsx";
 
 function App() {
   return (
     <div className="App">
+      <Mui />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
