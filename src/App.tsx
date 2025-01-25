@@ -3,6 +3,7 @@ import "./App.css";
 import React from "react";
 import Greet from "./components/greet/greet.tsx";
 import Application from "./components/application/application.tsx";
+import Skills from "./components/skills/skills.tsx";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       </header> */}
       <Greet name="Selvam" />
       <Application />
+      <Skills skills={["html", "css", "javascript"]} />
     </div>
   );
 }

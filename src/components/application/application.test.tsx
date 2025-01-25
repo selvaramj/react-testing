@@ -22,11 +22,17 @@ describe("Application component validation", () => {
     const paragraphElement1 = screen.getByTestId("para");
     expect(paragraphElement1).toBeInTheDocument();
     // paragraph element validated by substring
-    // const paragrapghElement2 = screen.getByText("manadatory", { exact: false });
-    // expect(paragrapghElement2).toBeInTheDocument();
+    const paragrapghElement2 = screen.getByText("mandatory", { exact: false });
+    expect(paragrapghElement2).toBeInTheDocument();
     // paragraph element validated by reg match
-    const paragrapghElement3 = screen.getByText(/manadatory/i);
+    const paragrapghElement3 = screen.getByText(/mandatory/i);
     expect(paragrapghElement3).toBeInTheDocument();
+
+    // paragraph element validation with text-match function
+    const paragraphElement4 = screen.getByText((element) =>
+      element.startsWith("All the fields")
+    );
+    expect(paragraphElement4).toBeInTheDocument();
 
     // validations - name field
     const nameElement = screen.getByRole("textbox", {
