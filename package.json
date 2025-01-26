@@ -18,12 +18,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:coverage": "react-scripts test --coverage --collectCoverageFrom='src/components/**/*.{ts,tsx}' --collectCoverageFrom='!src/components/**/*.{types,stories,constants,test,spec}.{ts,tsx}'"
+    "lint": "eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,js,jsx,css,scss}\"",
+    "test:coverage": "react-scripts test --coverage --collectCoverageFrom='src/components/**/*.{ts,tsx}' --collectCoverageFrom='!src/components/**/*.{types,stories,constants,test,spec}.{ts,tsx}'",
+    "prepare": "husky && husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "eslint-config-prettier"
     ]
   },
   "browserslist": {
@@ -46,7 +50,12 @@
     "@types/jest": "^29.5.14",
     "@types/node": "^22.10.5",
     "@types/react": "^19.0.2",
-    "@types/react-dom": "^19.0.2"
+    "@types/react-dom": "^19.0.2",
+    "eslint-config-prettier": "^10.0.1",
+    "husky": "^8.0.0",
+    "msw": "^1.2.5",
+    "prettier": "^3.4.2",
+    "util": "^0.12.5"
   },
   "jest": {
     "coverageThreshold": {
@@ -57,5 +66,10 @@
         "funtions": 80
       }
     }
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

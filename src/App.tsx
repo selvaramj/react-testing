@@ -1,14 +1,16 @@
-import logo from "./logo.svg";
-import "./App.css";
-import React from "react";
-import Greet from "./components/greet/greet.tsx";
-import Application from "./components/application/application.tsx";
-import Skills from "./components/skills/skills.tsx";
-import Mui from "./components/MUI/Mui.tsx";
+import logo from './logo.svg';
+import './App.css';
+import React from 'react';
+import Greet from './components/greet/greet.tsx';
+import Application from './components/application/application.tsx';
+import Skills from './components/skills/skills.tsx';
+import Mui from './components/MUI/Mui.tsx';
+import Users from './components/Users/index.tsx';
 
 function App() {
   return (
     <div className="App">
+      <Users />
       <Mui />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -26,7 +28,7 @@ function App() {
       </header> */}
       <Greet name="Selvam" />
       <Application />
-      <Skills skills={["html", "css", "javascript"]} />
+      <Skills skills={['html', 'css', 'javascript']} />
     </div>
   );
 }

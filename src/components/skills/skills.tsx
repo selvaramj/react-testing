@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { SkillProps } from "./skills.types";
+import React, { useEffect, useState } from 'react';
+import { SkillProps } from './skills.types';
 
 const Skills = (props: SkillProps) => {
   const { skills } = props;
@@ -11,17 +11,13 @@ const Skills = (props: SkillProps) => {
   }, []);
   return (
     <>
-      <ul>
-        {skills?.map((skill, index) => (
-          <li key={index}>{skill}</li>
-        ))}
-      </ul>
+      <ul>{skills?.map((skill, index) => <li key={index}>{skill}</li>)}</ul>
       {isStarted ? (
         <button onClick={() => setIsStarted(false)}>Not started</button>
       ) : (
         <button onClick={() => setIsStarted(true)}>started</button>
       )}
-      <p>{isUserLoggedIn ? "logged in" : "logged out"}</p>
+      <p>{isUserLoggedIn ? 'logged in' : 'logged out'}</p>
     </>
   );
 };

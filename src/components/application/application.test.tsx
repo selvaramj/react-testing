@@ -1,28 +1,28 @@
-import React from "react";
-import Application from "./application";
-import { render, screen } from "@testing-library/react";
+import React from 'react';
+import Application from './application';
+import { render, screen } from '@testing-library/react';
 
-describe("Application component validation", () => {
-  it("To make sure the necessary fields are present in the form by the role", () => {
+describe('Application component validation', () => {
+  it('To make sure the necessary fields are present in the form by the role', () => {
     // render the component
     render(<Application />);
 
     // heading validation
-    const formHeading = screen.getByRole("heading", { level: 1 });
+    const formHeading = screen.getByRole('heading', { level: 1 });
     expect(formHeading).toBeInTheDocument();
 
     // section heading validation
-    const sectionHeading = screen.getByRole("heading", { level: 6 });
+    const sectionHeading = screen.getByRole('heading', { level: 6 });
     expect(sectionHeading).toBeInTheDocument();
 
     // paragragh validation
-    const paragraphElement = screen.getByText("All the fields are mandatory");
+    const paragraphElement = screen.getByText('All the fields are mandatory');
     expect(paragraphElement).toBeInTheDocument();
     // paragragh validation by custom test attribute
-    const paragraphElement1 = screen.getByTestId("para");
+    const paragraphElement1 = screen.getByTestId('para');
     expect(paragraphElement1).toBeInTheDocument();
     // paragraph element validated by substring
-    const paragrapghElement2 = screen.getByText("mandatory", { exact: false });
+    const paragrapghElement2 = screen.getByText('mandatory', { exact: false });
     expect(paragrapghElement2).toBeInTheDocument();
     // paragraph element validated by reg match
     const paragrapghElement3 = screen.getByText(/mandatory/i);
@@ -30,41 +30,41 @@ describe("Application component validation", () => {
 
     // paragraph element validation with text-match function
     const paragraphElement4 = screen.getByText((element) =>
-      element.startsWith("All the fields")
+      element.startsWith('All the fields'),
     );
     expect(paragraphElement4).toBeInTheDocument();
 
     // validations - name field
-    const nameElement = screen.getByRole("textbox", {
-      name: "Name",
+    const nameElement = screen.getByRole('textbox', {
+      name: 'Name',
     });
     expect(nameElement).toBeInTheDocument();
     // validations - name field
-    const nameElement2 = screen.getByLabelText("Last name");
+    const nameElement2 = screen.getByLabelText('Last name');
     expect(nameElement2).toBeInTheDocument();
     // last name field validation
-    const lastNameElement = screen.getByPlaceholderText("enter your last name");
+    const lastNameElement = screen.getByPlaceholderText('enter your last name');
     expect(lastNameElement).toBeInTheDocument();
     // vlidate the last name field with value
-    const lastNameField = screen.getByDisplayValue("jayakumar");
+    const lastNameField = screen.getByDisplayValue('jayakumar');
     expect(lastNameField).toBeInTheDocument();
     // validate the image by alt attribute
-    const imgElement = screen.getByAltText("dummy-image");
+    const imgElement = screen.getByAltText('dummy-image');
     expect(imgElement).toBeInTheDocument();
     // validate the image by alt attribute
-    const imgElement1 = screen.getByTitle("dummy image");
+    const imgElement1 = screen.getByTitle('dummy image');
     expect(imgElement1).toBeInTheDocument();
     // Bio textarea - validation
-    const textAreaElement = screen.getByRole("textbox", { name: "Bio" });
+    const textAreaElement = screen.getByRole('textbox', { name: 'Bio' });
     expect(textAreaElement).toBeInTheDocument();
     // combo box validation
-    const jobLocationElement = screen.getByRole("combobox");
+    const jobLocationElement = screen.getByRole('combobox');
     expect(jobLocationElement).toBeInTheDocument();
     // checkbox validation
-    const checkboxElement = screen.getByRole("checkbox");
+    const checkboxElement = screen.getByRole('checkbox');
     expect(checkboxElement).toBeInTheDocument();
     // button validation
-    const buttonElement = screen.getByRole("button");
+    const buttonElement = screen.getByRole('button');
     expect(buttonElement).toBeInTheDocument();
   });
 });

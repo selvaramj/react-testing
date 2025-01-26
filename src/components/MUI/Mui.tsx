@@ -1,5 +1,5 @@
-import { Typography, useTheme } from "@mui/material";
-import React from "react";
+import { Typography, useTheme } from '@mui/material';
+import React from 'react';
 
 const Mui = () => {
   const theme = useTheme();
