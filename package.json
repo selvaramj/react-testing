@@ -53,6 +53,7 @@
     "@types/react-dom": "^19.0.2",
     "eslint-config-prettier": "^10.0.1",
     "husky": "^8.0.0",
+    "lint-staged": "^15.4.2",
     "msw": "^1.2.5",
     "prettier": "^3.4.2",
     "util": "^0.12.5"
@@ -70,6 +71,14 @@
   "msw": {
     "workerDirectory": [
       "public"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint"
+    ],
+    "*.{ts,tsx,css,scss}": [
+      "prettier --write"
     ]
   }
 }
